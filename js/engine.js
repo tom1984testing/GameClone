@@ -83,8 +83,8 @@ var Engine = (function(global) {
         allEnemies.forEach(function (enemy) {
             if(Math.abs(enemy.x - player.x) <= 40 && Math.abs(enemy.y - player.y) <= 60 ) {
                 // 发生冲突，结束游戏
-                player.x = 101 * 2;
-                player.y = 83 * 5;
+                player.x = TILE_WIDTH * 2;
+                player.y = TILE_HEIGHT * 5;
                 return true;
             }
         });
@@ -117,7 +117,7 @@ var Engine = (function(global) {
                  * 第二个和第三个分别是起始点的x和y坐标。我们用我们事先写好的资源管理工具来获取
                  * 我们需要的图片，这样我们可以享受缓存图片的好处，因为我们会反复的用到这些图片
                  */
-                ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                ctx.drawImage(Resources.get(rowImages[row]), col * TILE_WIDTH, row * TILE_HEIGHT);
             }
         }
 
